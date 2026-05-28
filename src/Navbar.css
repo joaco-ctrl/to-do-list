@@ -1,0 +1,156 @@
+:root {
+  --fb-blue: #1877f2;
+  --fb-bottom-nav-height: 56px;
+}
+
+.fb-bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(1126px, 100%);
+  height: calc(var(--fb-bottom-nav-height) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  z-index: 900;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: center;
+}
+
+.fb-bottom-nav__item {
+  height: var(--fb-bottom-nav-height);
+  background: transparent;
+  border: 0;
+  color: rgba(101, 103, 107, 1);
+  display: grid;
+  place-items: center;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fb-bottom-nav__item:focus-visible {
+  outline: 2px solid rgba(24, 119, 242, 0.5);
+  outline-offset: -2px;
+}
+
+.fb-bottom-nav__icon {
+  width: 26px;
+  height: 26px;
+}
+
+.fb-bottom-nav__item--active {
+  color: var(--fb-blue);
+}
+
+@media (min-width: 769px) {
+  .fb-bottom-nav {
+    display: none;
+  }
+}
+
+
+.todo-app{
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.todo-item{
+  width:80%;
+}
+
+.todo-container{
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 88px;
+  box-sizing: border-box;
+}
+
+.todo-item--completed .todo-item__text {
+  text-decoration: line-through;
+  color: #8e8e93;
+}
+
+.todo-empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: #8e8e93;
+  font-size: 15px;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Bottom navbar */
+.todo-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 6px 8px;
+  padding-bottom: max(6px, env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 0.5px solid rgba(60, 60, 67, 0.18);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
+  z-index: 100;
+}
+
+.todo-navbar__tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  border: none;
+  background: transparent;
+  color: #8e8e93;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: color 0.2s ease, background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.todo-navbar__tab:active {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.todo-navbar__tab--active {
+  color: #007aff;
+}
+
+.todo-navbar__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.todo-navbar__label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.todo-navbar__tab--active .todo-navbar__label {
+  font-weight: 600;
+}
+
+
+
+ul{
+    padding: 0%;
+}

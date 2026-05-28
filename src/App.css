@@ -1,0 +1,296 @@
+.todo-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.todo-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.h1-todo {
+  color: #333;
+  font-size: 2.5rem;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.form input  {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form input:focus {
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  transform: scale(1.02);
+}
+
+.form input::placeholder {
+  color: #999;
+}
+
+li{
+  overflow-wrap: break-word;
+  list-style: none;
+  width: 80%;
+  padding: 10px;
+  background: #e3e3e3;
+  color: #005726;
+  border:solid 1px #333;
+  border-radius: 8px;
+}
+
+.div-li-todo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+/* Hoja de acciones / Action sheet - estilo iOS / mobile */
+.action-sheet-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 8px;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+    background: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.25s ease;
+}
+
+.action-sheet {
+    width: 100%;
+    max-width: 500px;
+    animation: slideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.action-sheet__btn {
+    display: block;
+    width: 100%;
+    padding: 17px 16px;
+    border: none;
+    background: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #007aff;
+    text-align: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.15s ease;
+}
+
+.action-sheet__btn:active {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.action-sheet__btn--destructive {
+    color: #ff3b30;
+    font-weight: 400;
+}
+
+.action-sheet__btn--cancel {
+    background: #fff;
+    border-radius: 14px;
+    font-weight: 600;
+    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+}
+
+.action-sheet__divider {
+    height: 0.5px;
+    background: rgba(60, 60, 67, 0.18);
+    margin-left: 16px;
+}
+
+.action-sheet__panel {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.action-sheet__title {
+    margin: 0;
+    padding: 14px 16px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center;
+    color: #8e8e93;
+    letter-spacing: -0.01em;
+}
+
+.action-sheet__separator {
+    height: 0.5px;
+    background: rgba(60, 60, 67, 0.18);
+    margin: 0 16px;
+}
+
+.action-sheet__input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(60, 60, 67, 0.18);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 14px 16px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.action-sheet__input:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.action-sheet__btn--danger {
+    color: #ff3b30;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media queries para celulares */
+@media (max-width: 480px) {
+    .todo-container {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .h1-todo {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .form {
+        flex-direction: column;
+        gap: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .form input {
+        padding: 12px 12px;
+        font-size: 16px;
+    }
+
+    .form button {
+        padding: 12px 16px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    li {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .div-li-todo {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .action-sheet-overlay {
+        padding: 4px;
+    }
+
+    .action-sheet {
+        max-width: 100%;
+    }
+
+    .action-sheet__btn {
+        padding: 14px 12px;
+        font-size: 16px;
+    }
+
+    .action-sheet__title {
+        padding: 12px 12px 10px;
+        font-size: 14px;
+    }
+
+    .action-sheet__separator {
+        margin: 0 12px;
+    }
+
+    .action-sheet__input {
+        margin: 12px 12px;
+        padding: 11px 12px;
+        font-size: 16px;
+    }
+
+    .action-sheet__panel {
+        border-radius: 12px;
+        margin-bottom: 6px;
+    }
+}
+
+@media (max-width: 360px) {
+    .h1-todo {
+        font-size: 1.5rem;
+    }
+
+    .form {
+        padding: 12px;
+    }
+
+    .action-sheet__btn {
+        padding: 12px 10px;
+        font-size: 15px;
+    }
+
+    li {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+
+/* Espacio para la navbar inferior (solo vista mobile) */
+@media (max-width: 768px) {
+  .app-content {
+    padding-bottom: calc(
+      var(--fb-bottom-nav-height) + env(safe-area-inset-bottom)
+    );
+  }
+}
+
+
